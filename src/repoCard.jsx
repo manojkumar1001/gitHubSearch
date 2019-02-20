@@ -6,7 +6,8 @@ import Grid from '@material-ui/core/Grid';
 class RepoCard extends Component {
     state = {  }
     render() { 
-        return ( <Grid container xs ={24}>
+        return ( <div style={{border:2,borderColor:'#999', borderStyle: 'solid',paddingLeft:20,paddingRight:40,paddingBottom:10,paddingTop:10,margin:20,backgroundColor:'#eee'}}>
+                <Grid container xs ={24}>
             <Grid xs={12}>
                 <Image />
             </Grid>
@@ -18,7 +19,8 @@ class RepoCard extends Component {
             </Grid>
             <Grid xs={12}><p>this is other life</p></Grid>
             <Grid xs={12}>viewProfile</Grid>
-        </Grid> );
+        </Grid>            
+            </div> );
     }
 }
  

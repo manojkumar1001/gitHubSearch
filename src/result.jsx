@@ -24,7 +24,7 @@ class Result extends Component {
                 <Grid container xs={24}>
                     <Grid xs={12}><h4 style={style.headingDiv}>Repo Search Result</h4></Grid>
                     <Grid xs={12} style={{padding: 15}}>
-                        <Grid container xs={24}>
+                        <Grid container xs={40} style={{padding:10}}>
                             <Grid sm={4} xs={12}>
                                 <RepoCard />
                             </Grid>
