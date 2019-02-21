@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import RepoCard from './repoCard';
 const style ={
         headingDiv:{
@@ -16,27 +15,21 @@ const style ={
         }
     }
 class Result extends Component {
-    state = { repoData: '' }
-    
+    state = { repoData: this.props.list }
+    componentWillReceiveProps(nextProps){
+        console.log("hello")
+        this.setState({
+            repoData: nextProps.list
+        })
+    }
     render() { 
         return (
             <Grid xs = {12} style={style.componentField}>
                 <Grid container xs={24}>
-                    <Grid xs={12}><h4 style={style.headingDiv}>Repo Search Result</h4></Grid>
+                    <Grid xs={12}><h4 style={style.headingDiv}>Repo Search Result </h4></Grid>
                     <Grid xs={12} style={{padding: 15}}>
                         <Grid container xs={40} style={{padding:10}}>
-                            <Grid sm={4} xs={12}>
-                                <RepoCard />
-                            </Grid>
-                            <Grid sm={4} xs={12}>
-                                <RepoCard />
-                            </Grid>
-                            <Grid sm={4} xs={12}>
-                                <RepoCard />
-                            </Grid>
-                              <Grid sm={4} xs={12}>
-                                <RepoCard />
-                            </Grid>
+                            {this.state.repoData.map((i, x)=> <RepoCard key={x} list ={i}/>)}
                         </Grid>
                     </Grid>
                 </Grid>

@@ -1,12 +1,28 @@
 import React, { Component } from 'react'
+import Grid from '@material-ui/core/Grid';
+import Avatar from '@material-ui/core/Avatar';
 
+const style = {
+    bigAvatar: {
+        margin: 10,
+        width: 180,
+        height: 180,
+      }
+}
 class Image extends Component {
-    state = {  }
+    state = { 
+        imageUrl: this.props.imageUrl
+     }
+     componentWillReceiveProps(newProps){
+         this.setState({
+             imageUrl: newProps.imageUrl
+         })
+     }
     render() { 
         return ( 
-            <div style={{paddingLeft:90,paddingRight:90}}>
-                <div style={{backgroundColor: 'black',width:150, height:150,borderRadius:75,color: 'white' }}><h3 style={{padding:30}}>hello</h3></div> 
-            </div>
+            <Grid container justify="center" alignItems="center">
+                <Avatar alt="Remy Sharp" src={this.state.imageUrl} style={style.bigAvatar} />
+            </Grid>
         );
     }
 }

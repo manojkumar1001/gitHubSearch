@@ -17,6 +17,11 @@ const style ={
     }
 class Search extends Component {
     state = { searchItem: '' }
+    changedSearch=(event)=>{
+        this.setState({
+            searchItem: event.target.value 
+        })
+    }
     render() { 
         return ( <Grid xs = {12} >
                 <Grid container style={style.componentField} xs={24}>
@@ -29,10 +34,12 @@ class Search extends Component {
                                 margin="normal"
                                 variant="outlined"
                                 fullWidth
+                                value={this.state.searchItem}
+                                onChange={this.changedSearch}
                                 />
                             </Grid>
                             <Grid xs={3} style={{ paddingTop: 30, paddingBottom:30, paddingLeft:10}}>
-                                <Button variant="contained" style={{backgroundColor: '#0069ff', color: 'white'}} >Search</Button>
+                                <Button variant="contained" style={{backgroundColor: '#0069ff', color: 'white'}} onClick={()=>this.props.search(this.state.searchItem)}>Search</Button>
                             </Grid>
                         </Grid>
                     </Grid>
