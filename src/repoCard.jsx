@@ -34,6 +34,9 @@ class RepoCard extends Component {
            profileUrl: newProps.list.url
         })
     }
+    redirect = () => {
+        window.location.href=this.state.profileUrl
+    }
     render() { 
         return( 
         <Grid sm={4} xs={12}>
@@ -51,7 +54,7 @@ class RepoCard extends Component {
                 </Grid>
             </Grid>
             <Grid xs={12}><Grid container justify="center" alignItems="center"><p>{this.state.description}</p></Grid></Grid>
-            <Grid xs={12}><Grid container justify="center" alignItems="center"><div style={{padding:20}}>VIEW PROFILE</div></Grid></Grid>
+            <Grid xs={12}><Grid container justify="center" alignItems="center"><div style={{padding:20}} onClick={this.redirect}>VIEW PROFILE</div></Grid></Grid>
         </Grid>            
             </div> </Grid>);
     }
