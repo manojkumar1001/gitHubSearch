@@ -14,7 +14,7 @@ class Rounded extends Component {
         return (
             <Grid xs={4}>
             <div style={{paddingRight:4}}>
-                <div style={{paddingLeft:15,paddingRight:15,borderRadius:10,border:2,borderStyle:'solid',borderColor:'#aaa'}}>
+                <div style={{paddingLeft:5,borderRadius:10,border:2,borderStyle:'solid',borderColor:'#aaa'}}>
                     {this.state.name}
                     {this.state.value}
                 </div>
